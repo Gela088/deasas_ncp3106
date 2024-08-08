@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biographical Note</title>
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Lucida Sans Unicode', sans-serif; /* Font stack */
+            background-image: url('/Users/gela/Documents/bg3.png'); /* Background image for body */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white; /* Sets all text color to white */
+        }
+
+        /* Add text outline to all text elements */
+        * {
+            text-shadow: 1px 2px 3px #082908, 0 0 25px #082908, 0 0 5px #082908;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-image: url('/Users/gela/Documents/header-bg.png'); /* Background image for header */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            height: 100px; /* Fixed height for header */
+            width: 100%; /* Full width of the viewport */
+            padding: 0 20px; /* Padding on left and right */
+            box-sizing: border-box; /* Ensures padding does not affect total width */
+        }
+
+        header .title {
+            font-size: 30px; /* Adjust font size as needed, for bionote text */
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px; /* Space between links */
+        }
+
+        nav a {
+            text-decoration: none; /* Removes underline from links */
+            color: white; /* Link text color */
+            font-size: 30px; /* Font size for navigation links */
+            padding: 10px 15px; /* Padding for buttons */
+            border-radius: 5px; /* Rounded corners for buttons */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        nav a:hover {
+            background-color: #305d30; /* Background color on hover (buttons)*/
+            color: #ffffff; /* Text color on hover */
+        }
+
+        .container {
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .bio {
+            text-align: center;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bio img {
+            border-radius: 50%;
+            width: 300px; /* Adjust the width as needed */
+            height: auto;
+            margin-bottom: 25px; /* Space below the image */
+            box-shadow: 0 0 0 10px #305d30; /* Pastel green outline */
+        }
+
+        .bio p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .bio h1 {
+            font-size: 25px;
+            margin-bottom: 40px; /* Space below the header text */
+        }
+
+        .social-icons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white; /* Sets icon color to white */
+            margin-right: 10px; /* Space between icons */
+            font-size: 25px;
+        }
+
+        .social-icons a:hover {
+            color: #ddd; /* Lightens icon color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">BIONOTE</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div id="home" class="container">
+        <div class="bio">
+            <h1>Angela De Asas</h1>
+            <img src="/Users/gela/Documents/IMG20220422213235.jpg" alt="Angela De Asas">
+        </div>
+    </div>
+
+    <div id="about" class="container">
+        <!-- About section content goes here -->
+        <h2>About</h2>
+        <p>Angela De Asas was in the last month of the year 1999</p>
+        <p>Outside of her professional pursuits, Angela enjoys reading, traveling, and engaging in community service. She believes in the power of giving back to the community and often participates in initiatives that support education and technology access for underprivileged groups.</p>
+    </div>
+
+    <div id="contact" class="container">
+        <!-- Contact section content goes here -->
+        <h2>Contact</h2>
+        <p>Mobile No: idk</p>
+        <p>Email: idk</p>
+        <p>Insta: None XD</p>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.google.com" target="_blank"><i class="fab fa-google"></i></a>
+    </div>
+</body>
+</html>
