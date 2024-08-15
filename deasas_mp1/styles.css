@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+/* for 1st LAYER */
+body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url('/Users/gela/Documents/deasas_mp1/bg3.png'); /* Background image for body */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white; /* Sets all text color to white */
+    font-family: 'Roboto';
+}
+
+/* Add Text Outline to All text elements */
+* {
+    text-shadow: 1px 2px 3px #082908, 0 0 25px #082908, 0 0 5px #082908;
+}
+
+/* for HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('/Users/gela/Documents/deasas_mp1/header-bg3.png'); /* Background image for header @ top */
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255); /* color for the Header text */
+    height: 100px; /* Fixed height for header */
+    width: 100%; /* Full width of the viewport */
+    padding: 0 20px; /* Padding on left and right */
+    box-sizing: border-box; /* Ensures padding does not affect total width */
+}
+
+/* for Text "BIONOTE" */
+header .title {
+    font-size: 40px; /* Adjust font size as needed */
+    font-weight: bold;
+    padding: 0 20px; /* Padding for "Bionote" text */
+}
+
+/* for NAVIGATION BOTTONS text "Top","About","Contact" */
+nav {
+    display: flex;
+    gap: 20px; /* Space between links */
+}
+
+nav a {
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Link text color */
+    font-size: 30px; /* Font size for navigation links */
+    padding: 10px 15px; /* Padding for buttons */
+    border-radius: 20px; /* Rounded corners for buttons */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+    background-color: #305d30; /* Background color on hover */
+    color: #ffffff; /* Text color on hover */
+}
+
+/* ".container" refers to storage of the details from "About" to "Contact" */
+.container {
+    padding: 50px 200px 0px 200px;
+    box-sizing: border-box;
+}
+
+.container h2 {
+    font-size: 30px;
+}
+
+
+/* ".bio" refers to storage of the details from the profile pic to bio text */
+.bio {
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center;    /* Center horizontally */
+    justify-content: center;/* Center vertically */
+    width: 70%;             /* Container width */
+    margin: 0 auto;         /* Center the .bio container within its parent */
+    text-align: center;     /* Center text */
+    color: #e5e5e5;         /* Text color */
+}
+
+
+/* in ".bio img", "img" is image, the profile picture */
+.bio-img img {
+    border-radius: 50%; /* Makes the picture round */
+    width: 300px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 25px; /* Space to the right of the image */
+    box-shadow: 0 0 0 10px #305d30; /* Pastel green outline */
+}
+
+/* in ".bio p", "p" refers to the Bio text */
+.bio p {
+    font-size: 40px; /* Font size for bio text */
+    line-height: 1.6;
+    text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
+}
+
+/* Animation styles */
+.animation {
+    height: 80px; /* Height of the animation container */
+    overflow: hidden;
+    margin-left: 1rem;
+}
+
+.animation > div > div {
+    padding: 10px;
+    height: 3rem;
+    margin-bottom: 2.5rem;
+    display: inline-block;
+    border-radius: 5%;
+}
+
+.animation div:first-child {
+    animation: text-animation 8s infinite;
+}
+
+.first div {
+    background-color: #20a7d8;
+}
+
+.second div {
+    background-color: #CD921E;
+}
+
+.third div {
+    background-color: #c10528;
+}
+
+.fourth div {
+    background-color: #613d44;
+}
+
+@keyframes text-animation {
+    0% { margin-top: 0; }
+    10% { margin-top: 0; }
+    25% { margin-top: -5.62rem; }
+    35% { margin-top: -5.62rem; }
+    50% { margin-top: -11.24rem; }
+    60% { margin-top: -11.24rem; }
+    75% { margin-top: -16.86rem; }
+    85% { margin-top: -16.86rem; }
+    100% { margin-top: 0; }
+}
+
+/* For contact and social icons */
+#contact h2 {
+    font-size: 30px;
+}
+
+.social-icons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: white; /* Sets icon color to white */
+    margin-right: 10px; /* Space between icons */
+}
