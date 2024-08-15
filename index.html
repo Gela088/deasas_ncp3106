@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biographical Note</title>
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+   
+   <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Roboto:400');
+        @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+        
+
+        /* for 1st LAYER */
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-image: url('/Users/gela/Documents/deasas_mp1/mush.jpg'); /* Background image for body */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white; /* Sets all text color to white */
+            font-family: 'Roboto';
+        }
+
+        /* Add Text Outline to All text elements */
+        * {
+            text-shadow: 2px 3px 4px rgb(5, 35, 52), 0 0 25px rgba(5, 35, 52, 0.9), 0 0 5px rgba(5, 35, 52, 0.7);
+        }
+
+        /* for HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            color:  rgb(255, 255, 255); /* color for the Header text */
+            height: 100px; /* Fixed height for header */
+            width: 70%; /* Full width of the viewport */
+            box-sizing: border-box; /* Ensures padding does not affect total width */
+            background-color: rgb(5, 35, 52);
+        }
+
+        /* for Text "BIONOTE" */
+        header .title {
+            font-size: 30px; /* Adjust font size as needed only for BIONOTe*/
+            font-weight: bold;
+            padding: 0 13px; /* Padding for "Bionote" text */
+        }
+
+        /* for NAVIGATION BOTTONS text "Top","About","Contact" */
+        nav {
+            display: flex;
+            gap: 18px; /* Space between links */
+        }
+
+        nav a {
+            text-decoration: none; /* Removes underline from links */
+            color: white; /* Link text color */
+            font-size: 25px; /* Font size for navigation links */
+            padding: 8px 13px; /* Padding for buttons */
+            border-radius: 20px; /* Rounded corners for buttons */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        nav a:hover {
+            background-color: #2489d1; /* Background color on hover #305d30*/
+            color: rgb(255, 255, 255); /* Text color on hover */
+        }
+
+        /* ".container" refers to storage of the details from "About" to "Contact" */
+        .container {
+            box-sizing: border-box;
+            width: 70%; /* Full width of the viewport */
+            padding: 50px 50px 50px 50px;
+            background-color: rgba(44, 122, 167, 0.692);
+            color:  rgb(255, 255, 255);
+        }
+
+        .container h2 {
+            font-size: 35px;
+        }
+
+        .bio {
+            display: flex;
+            flex-direction: column; /* Arrange children vertically */
+            align-items: center;    /* Center horizontally */
+            justify-content: center;/* Center vertically */
+            width: 70%;             /* Container width */
+            margin: 0 auto;         /* Center the .bio container within its parent */
+            text-align: center;     /* Center text */
+            color: #e5e5e5;         /* Text color */
+        }
+
+        .bio-img img {
+            border-radius: 50%; /* Makes the picture round */
+            width: 300px; /* Adjust the width as needed */
+            height: auto;
+            box-shadow: 0 0 0 10px rgba(5, 35, 52, 0.688); /* Pastel green outline */
+        }
+
+        .bio-text p {
+            font-size: 35px; /* Font size for bio text */
+            line-height: 1.8;
+            text-shadow: 0 10px 0 10px rgba(5, 35, 52, 0.5), 0 0 12px rgba(158, 143, 143, 0.8);
+        }
+
+
+        /* ".bio" refers to storage of the details from the profile pic to bio text */
+        .bio-text {
+            display: flex;
+            align-items: center;
+            color: #e5e5e5;
+        }
+
+
+        #about_me h2{
+            font-size: 35px;
+        }
+
+
+        #about_me p{
+            text-indent: 50px; /* Indent the first line slightly */
+            margin: 0 0 20px 0; /* Add 15px spacing below each paragraph */
+            font-size: 20px;
+            text-align: justify; /* Ensure both sides are aligned */
+        }
+
+
+        /* Animation styles */
+        .animation {
+            height: 60px; /* Height of the animation container */
+            overflow: hidden;
+            margin-left: 1rem;
+            font-size: 40px;
+        }
+
+        .animation > div > div {
+            padding: 15px;
+            height: 60px;
+            margin-bottom: 1rem;
+            display: inline-block;
+            border-radius: 5%;
+        }
+
+        .animation div:first-child {
+            animation: text-animation 8s infinite;
+        }
+
+        .first div {
+            background-color: #a9a1a1;
+        }
+
+        .second div {
+            background-color: #95d4eb;
+        }
+
+        .third div {
+            background-color: #a8767c;
+        }
+
+        .fourth div {
+            background-color: #9ec29e;
+        }
+
+        @keyframes text-animation {
+            0% { margin-top: 0; }
+            10% { margin-top: 0; }
+            25% { margin-top: -5.62rem; }
+            35% { margin-top: -5.62rem; }
+            50% { margin-top: -11.24rem; }
+            60% { margin-top: -11.24rem; }
+            75% { margin-top: -16.86rem; }
+            85% { margin-top: -16.86rem; }
+            100% { margin-top: 0; }
+        }
+
+        /* For contact and social icons */
+        #contact h2 {
+            font-size: 40px;
+        }
+
+
+        #contact p{
+            font-size: 20px;
+        }
+
+
+        .social-icons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white; /* Sets icon color to white */
+            margin-right: 10px; /* Space between icons */
+            font-size: 25px;
+        }
+
+        .social-icons a:hover {
+            color: #ddd; /* Lightens icon color on hover */
+        }
+
+        /* Style for the gallery container */
+        .gallery {
+            position: fixed;
+            top: 0px; /* Adjust based on header height */
+            right: 0;
+            width: 30%; /* Width of the gallery */
+            height: 100%;
+            background-color:  rgba(69, 49, 21, 0.938); /* Background color */
+            color: white;
+            padding: 20px;
+            overflow-x: auto; /* Allows scrolling */
+            box-sizing: border-box;
+        }
+
+        /* Style for gallery navigation */
+        .gallery-nav {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .gallery-nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .gallery-nav a:hover {
+            background-color: rgba(197, 173, 173, 0.969);
+            color: #ffffff;
+        }
+
+        /* Style for album sections */
+        .album {
+            display: none; /* Hide all albums by default */
+        }
+
+        .album img {
+            width: 1%; /* 1% of the original size to make it 100 times smaller */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 10px; /* Space between images */
+        }
+
+        /* Display the first album by default */
+        #album1 {
+            display: block;
+        }
+
+
+        .contact-icon {
+           width: 25px;
+           height: 25px;
+           margin-right: 10px; /* Space between the icon and the text */
+           vertical-align: middle; /* Align icon with text */
+        }
+
+    </style>
+
+</head>
+
+
+
+
+
+
+
+<body>
+
+    <header>
+        <div class="title">Window To My World</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about_me">About Me</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div id="home" class="container">
+        <div class="bio">
+            <div class="bio-img">
+                <img src="/Users/gela/Documents/deasas_mp1/PiC.jpg" alt="Gela's Pic">
+            </div>
+            <div class="bio-text">
+                <p>Previet! 👋 I'm</p>
+                <section class="animation">
+                    <div class="first"><div>Angela</div></div>
+                    <div class="second"><div>Angie </div></div>
+                    <div class="third"><div>Gela</div></div>
+                    <div class="fourth"><div>Ans</div></div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="about_me" class="container">
+        <h2>About Me</h2>
+        <p>Angela Tan De Asas was born in December 1999 in Catubig, a small town in Northern Samar. Her uncle, her mother's only brother, gave her the name Angela. She completed her elementary and high school education at a public school in her hometown. For her senior high school years, Angela moved to a more bustling town, Catarman, to attend the University of Eastern Philippines (UEP).</p>
+        <p>Upon graduating from UEP, Angela attended classes in San Beda University Manila, where she initially pursued a degree in Accountancy. Her family supported this choice, believing it would be an excellent foundation for a future career in law and a way to carry on the family business. However, Angela soon realized that she didn't feel a sense of belonging there. Feeling like an outcast without genuine friendships, she decided to shift her path. Angela then transferred to the University of the East, where she is now pursuing a degree in Computer Engineering, embracing a new direction that better aligns with her true passions and goals.</p>
+        <p>As the youngest child for 15 years, with a 5-year gap to her elder sister and a 10-year gap to her elder brother, Angela often found herself alone. This solitude nurtured her diverse passions and hobbies. Angela developed love for visual arts, experimenting with various mediums to express her creativity. She also enjoyed playing sports like badminton and archery. Her interests extended to tinkering with broken electronics, trying out new recipes in the kitchen to satisfy her culinary cravings, and gardening via planting medicinal herbs and vegetables.</p>
+        <p>In her quieter moments, Angela found solace in watching sunsets and stargazing, often reflecting on the world around her. Sometimes, she shares these peaceful experiences with friends, adding a social dimension to her contemplative pursuits.</p>
+    </div>
+
+
+    <div id="contact" class="container">
+        <h2>Contact</h2>
+        <p>
+            <img src="/Users/gela/Documents/deasas_mp1/" alt="Phone Icon" class="contact-icon"> Mobile No: idk
+        </p>
+        <p>
+            <img src="/Users/gela/Documents/deasas_mp1/" alt="Email Icon" class="contact-icon"> Email: idk
+        </p>
+        <p>
+            <img src="/Users/gela/Documents/deasas_mp1/" alt="Instagram Icon" class="contact-icon"> Insta: None XD
+        </p>
+    </div>
+    
+
+    <div id="gallery" class="gallery">
+        <nav class="gallery-nav">
+            <a href="#Album1"><img src="/Users/gela/Documents/deasas_mp1/" alt="UEP"></a>
+            <a href="#Album2"><img src="/Users/gela/Documents/deasas_mp1/" alt="SBU"></a>
+            <a href="#Album3"><img src="/Users/gela/Documents/deasas_mp1/" alt="UE"></a>
+            <a href="#Album4"><img src="/Users/gela/Documents/deasas_mp1/" alt="Hobbies"></a>
+        </nav>
+        <div id="Album1" class="album">
+            <img src="/Users/gela/Documents/deasas_mp1/" alt="Photo 1">
+            <img src="p/Users/gela/Documents/deasas_mp1/" alt="Photo 2">
+            <!-- More photos -->
+        </div>
+        <div id="Album2" class="album">
+            <img src="/Users/gela/Documents/deasas_mp1/" alt="Photo 3">
+            <img src="/Users/gela/Documents/deasas_mp1/" alt="Photo 4">
+            <!-- More photos -->
+        </div>
+        <div id="Album3" class="album">
+            <img src="/Users/gela/Documents/deasas_mp1/" alt="Photo 5">
+            <img src="/Users/gela/Documents/deasas_mp1/" alt="Photo 6">
+            <!-- More photos -->
+        </div>
+        <div id="Album4" class="album">
+            <img src="/Users/gela/Documents/deasas_mp1/" alt="Photo 7">
+            <img src="/Users/gela/Documents/deasas_mp1/" alt="Photo 8">
+            <!-- More photos -->
+        </div>
+    </div>
+    
+
+    <script>
+        document.querySelectorAll('.gallery-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('.album').forEach(album => {
+                    album.style.display = 'none';
+                });
+                document.getElementById(targetId).style.display = 'block';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
