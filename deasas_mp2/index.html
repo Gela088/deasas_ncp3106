@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angela's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit&family=Roboto:400');
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            background-image: url('/Users/gela/Documents/Software/deasas_mp2/bg8.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        * {
+            color: white;
+            text-shadow: 2px 3px 4px rgb(5, 35, 52), 0 0 25px rgba(5, 35, 52, 0.9), 0 0 5px rgba(5, 35, 52, 0.7);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            height: 45px;
+            background-color: rgba(0, 38, 27, 0.751);
+        }
+
+        header .title {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 0 13px;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            transition: background 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            cursor: pointer;
+            background: linear-gradient(45deg, rgb(21, 255, 0), rgba(0, 255, 255, 1), rgba(255, 255, 0, 1));
+            background-size: 600% 600%;
+            animation: rgb-glow 5s infinite;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: rgba(0, 38, 27, 0.751);
+        }
+
+
+
+/*  Transition to nxt page */
+
+        .flip-card {
+            background-color: transparent;
+            width: 700px;
+            height: 420px;
+            perspective: 1000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card-content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 30px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(1, 31, 22, 0.961);
+            color: white;
+        }
+
+        #home-content {
+            transform: rotateY(0deg);
+        }
+
+        #resume-content {
+            transform: rotateY(180deg);
+        }
+
+        #portfolio-content {
+            transform: rotateY(-90deg);
+        }
+
+        #contact-content {
+            transform: rotateY(90deg);
+        }
+
+
+
+/*  gb-glow for nav buttons */
+
+        @keyframes rgb-glow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+
+/*  Portfolio Section */
+
+        .container1 {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Make the scrollbar transparent */
+        .container1::-webkit-scrollbar {
+             width: 8px; /* Adjust the scrollbar width if needed */
+        }
+
+        .container1::-webkit-scrollbar-thumb {
+             background-color: rgba(1, 31, 22, 0.961); /* Make the scrollbar thumb transparent */
+             border-radius: 35%;
+        }
+
+        .container1::-webkit-scrollbar-track {
+             background-color: transparent; /* Make the scrollbar track transparent */
+        }
+
+        .container1 .card {
+            flex: 0 0 auto;
+            width: 320px;
+            height: 380px;
+            background: rgba(1, 31, 22, 0.961);
+            border-radius: 12px;
+            box-shadow: 2px 3px 10px rgb(5, 35, 52), 0 0 25px rgba(5, 35, 52, 0.9), 0 0 5px rgba(5, 35, 52, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        .container1 .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+
+        .container1 .card .media {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 250px;
+            margin-bottom: 15px;
+        }
+
+        .container1 .card video,
+        .container1 .card img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+        }
+
+        .container1 .card .content1 {
+            text-align: center;
+        }
+
+        .container1 .card .content1 h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .container1 .card .content1 p {
+            font-size: 16px;
+            color: #cccccc;
+        }
+
+
+
+/* Heading Style in Portfolio Content */
+
+        #portfolio-content h2 {
+             margin-bottom: 20px; /* Space between heading and text */
+        }
+
+         /* Text Style in Portfolio Content */
+        #portfolio-content p {
+             margin: 0; /* Remove default margin */
+             font-size: 16px; /* Adjust font size as needed */
+        }
+
+
+
+/*  Resume Carousel */
+
+        .carousel-container {
+            position: relative;
+            width: 65%;
+            max-width: 500px;
+            margin: 10px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
+
+
+        .carousel-txt-under img {
+            height: 30px; /* Set the desired height */
+            width: 30px; /* Automatically adjust the width to maintain the aspect ratio */
+            align-items: center;
+        }
+
+
+        .carousel-txt-under p {
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+
+        .caro-container{
+            flex: 0 0 auto;
+            width: 500px;
+            height: 420px;
+            background: rgba(1, 31, 22, 0.961);
+            display: flex;
+            flex-direction: column; /* Stack everything vertically */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: transform 0.5s, box-shadow 0.5s;
+            padding-left: 15px;
+        }
+
+
+
+/* Download button @ Resume */
+
+        .download-section {
+            text-align: center; /* Centers the download button */
+            margin-top: 20px;
+        }
+
+        .download-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .download-image {
+            width: 80px; /* Adjust as needed */
+            height: 80px; /* Keeps the image aspect ratio */
+            border-radius: 25px; /* Optional: gives rounded corners */
+        }
+
+        .icon-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 36px; /* Size of the download icon */
+            background-color: rgba(0, 0, 0, 0.5); /* Adds a dark transparent background */
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .icon-overlay i {
+            pointer-events: none; /* Prevents the icon from affecting the click event */
+        }    
+
+         .download-container:hover .icon-overlay {
+              background-color: rgba(0, 0, 0, 0.8); /* Changes background on hover */
+        }
+
+
+
+/* Image @ HOME */
+
+        .bio {
+            display: flex;
+            flex-direction: row; /* Arrange children vertically */
+            align-items: center;    /* Center horizontally */
+            justify-content: center;/* Center vertically */
+            margin: 0 auto;         /* Center the .bio container within its parent */
+            text-align: center;     /* Center text */
+            color: #e5e5e5;         /* Text color */
+            gap: 50px;
+        }
+
+        .bio-img img {
+            border-radius: 60%; /* Makes the picture round */
+            width: 260px; /* Adjust the width as needed */
+            height: auto;
+            align-items: right;    /* Center horizontally */
+            background: linear-gradient(45deg, rgb(41, 159, 31), rgb(15, 160, 160), rgb(135, 135, 21));
+        }
+
+        .bio-text {
+            row-gap: 5px;
+            text-align: Left;    /* Center horizontally */
+        }
+
+
+
+/* Hola!!!! */
+
+        .title p {
+            font-size: 20px; /* Font size for bio text */
+            line-height: 1.8;
+            text-shadow: 0 10px 0 10px rgba(5, 35, 52, 0.5), 0 0 12px rgba(158, 143, 143, 0.8);
+        }
+
+
+        /* ".bio" refers to storage of the details from the profile pic to bio text */
+        .title {
+            display: flex;
+            align-items: center;
+            color: #e5e5e5;
+        }
+
+
+
+/* Animation styles */
+
+        .animation {
+            height: 30px; /* Height of the animation container */
+            overflow: hidden;
+            margin-left: 1rem;
+            font-size: 25px;
+        }
+
+        .animation > div > div {
+            height: 30px;
+            margin-top: .5;
+            display: inline-block;
+            border-radius: 5%;
+            padding: 0px 8px 0px 8px;
+        }
+
+        .animation div:first-child {
+            animation: text-animation 8s infinite;
+        }
+
+        .first div {
+            background-color: #514f29;
+        }
+
+        .second div {
+            background-color: #39707b;
+        }
+
+        .third div {
+            background-color: #5d2f4a;
+        }
+
+        .fourth div {
+            background-color: #254625;
+        }
+
+        @keyframes text-animation {
+            0%, 20% { margin-top: 0; } /* Display 1st item */
+            25%, 45% { margin-top: -30px; } /* Display 2nd item */
+            50%, 70% { margin-top: -60px; } /* Display 3rd item */
+            75%, 95% { margin-top: -90px; } /* Display 4th item */
+            100% { margin-top: 0; } /* Loop back to 1st item */
+        }
+
+
+
+        :host, :root {
+             --fa-font-solid: normal 900 1em / 1 "Font Awesome 6 Free";
+        }
+        :host, :root {
+             --fa-font-regular: normal 400 1em / 1 "Font Awesome 6 Free";
+        }
+        :host, :root {
+             --fa-font-brands: normal 400 1em / 1 "Font Awesome 6 Brands";
+        }
+
+
+
+
+        .contact {
+            height: auto; /* Set the desired height */
+            width: 350px; /* Automatically adjust the width to maintain the aspect ratio */
+            align-items: center;
+            padding-left: 30px;
+        }
+
+
+        .contact img {
+            height: 30px; /* Set the desired height */
+            width: 30px; /* Automatically adjust the width to maintain the aspect ratio */
+            align-items: left;
+            border-radius: 40%;
+        }
+
+
+        .contact p {
+            text-align: auto;
+            width: 100%;
+            max-width: 500px;
+        }
+
+
+        .cont-img img{
+            height: 300px; /* Set the desired height */
+            width: 300px; /* Automatically adjust the width to maintain the aspect ratio */
+        }
+
+        .context{
+            align-items: center;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title"><p>Hola! 👋 I'm</p>
+
+            <section class="animation">
+                <div class="first"><div>Angela</div></div>
+                <div class="second"><div>Angie </div></div>
+                <div class="third"><div>Gela</div></div>
+                <div class="fourth"><div>Ans</div></div>
+            </section>
+
+        </div>
+
+        <nav>
+            <a href="#home" onclick="rotateTo('home')">Home</a>
+            <a href="#resume" onclick="rotateTo('resume')">Resume</a>
+            <a href="#portfolio" onclick="rotateTo('portfolio')">Portfolio</a>
+            <a href="#contact" onclick="rotateTo('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="flip-card">
+            <div class="flip-card-inner" id="flip-card-inner">
+
+                <!-- Home Section -->
+                <div class="flip-card-content" id="home-content">
+                    <div class="homtext">
+                        <div class="bio">
+
+                            <div class="bio-img">
+                                <img src="/deasas_mp2/pic2.png" alt="Gela's Pic">
+                            </div>
+
+                            <div class="bio-text">
+                                <h2>Hi There!!! I'm Angela</h2>
+                                <p></p>
+                                <p>A Computer Engineering Student</p>
+                                <p>From The University of the East, Manila</p>
+                                <p>How May I Help You ???</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resume Section -->
+                <div class="flip-card-content" id="resume-content">
+                    <div class="Restext">
+                        <h2>Who Am I?</h2>
+                        
+                        <div class="download-section">
+                            <a href="/deasas_mp2/Resume.pdf" download>
+                                <div class="download-container">
+                                    <img src="/deasas_mp2/document.gif" alt="Download Button Image" class="download-image" title="Download Resume">
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Carousel Section -->
+                    <div class="caro-container">
+                        
+                        <div class="carousel-container">
+
+                            <div class="carousel">
+
+                                <div class="carousel-slide">
+                                    <img src="/deasas_mp2/UEP.png" alt="Resume 1">
+                                </div>
+
+                                <div class="carousel-slide">
+                                    <img src="/deasas_mp2/SBU.png" alt="Resume 2">
+                                </div>
+
+                                <div class="carousel-slide">
+                                    <img src="/deasas_mp2/UE.png" alt="Resume 3">
+                                </div>
+
+                            </div>
+
+                            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+                            <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+                       
+                        </div>
+
+                        <div class="carousel-txt-under">
+                            <h2>Education</h2>
+                            <p>
+                                <a href="http://uep.edu.ph/2024/04/14/notice-of-vacant-positions-6/">
+                                     <img src="/deasas_mp2/UEPLOGO.png" alt="UEP" class="contact-icon"> UNIVERSITY OF EASTERN PHILIPPINES (SHS 2016 - 2018)</a> 
+                            </p>
+                            <p>
+                                <a href="https://www.sanbeda.edu.ph/">
+                                     <img src="/deasas_mp2/SBULOGO.png" alt="SBU" class="contact-icon"> SAN BEDA UNIVERSITY (BSA 2018)</a>
+                            </p>
+                            <p>
+                                <a href="https://www.ue.edu.ph/mla/">
+                                     <img src="/deasas_mp2/UELOGO.png" alt="UE" class="contact-icon"> UNIVERSITY OF EAST (BSCPE 2019 - Current)</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Section -->
+                <div class="flip-card-content" id="portfolio-content">
+                    <div class="portext">
+                        <h2>Portfolio</h2>
+                        <p>Projects and Activities</p>
+                    </div>
+
+                    <!-- Card container -->
+                    <div class="container1">
+                        <!-- Card 1 -->
+                        <div class="card">
+                            <div class="media">
+                                <video src="/deasas_mp2/3digitguess.mp4" alt="3 Digit Guess" controls></video>
+                            </div>
+                            <div class="content1">
+                                <h3>3 Digit Guess</h3>
+                                <p>A python game that wants you to predict the 3 hidden and randomly generated numbers ranging from 1 to 9.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="card">
+                            <div class="media">
+                                <video src="/deasas_mp2/10stimer.mp4" alt="10s Timer" controls></video>
+                            </div>
+                            <div class="content1">
+                                <h3>Stop @ 10s</h3>
+                                <p>A python game that challenges your timing by prompting you to stop the hidden timer at exactly 10 seconds.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="card">
+                            <div class="media">
+                                <video src="/deasas_mp2/B1.mp4" alt="B1 Project" controls></video>
+                            </div>
+                            <div class="content1">
+                                <h3>Building 1</h3>
+                                <p>The 1st building for our buisiness proposal project in Networks Application.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="card">
+                            <div class="media">
+                                <video src="/deasas_mp2/B2.mp4" alt="B2 Project" controls></video>
+                            </div>
+                            <div class="content1">
+                                <h3>Building 2</h3>
+                                <p>The 2st building for our buisiness proposal project in Networks Application.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="card">
+                            <div class="media">
+                                <img src="/deasas_mp2/act table open drawer.png" alt="table open drawer">
+                            </div>
+                            <div class="content1">
+                                <h3>Final Act Table Design</h3>
+                                <p>A 3D Table Design using Autocad.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="card">
+                            <div class="media">
+                                <img src="/deasas_mp2/a1.png" alt="a1">
+                            </div>
+                            <div class="content1">
+                                <h3>Siple IOT in Cisco</h3>
+                                <p>An inter connection between electronics.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="card">
+                            <div class="media">
+                                <video src="/deasas_mp2/Smart Car Parking System.mp4" alt="B1 Project" controls></video>
+                            </div>
+                            <div class="content1">
+                                <h3>Parking System</h3>
+                                <p>A simple smart parking system using Arduino.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="flip-card-content" id="contact-content">
+
+                        <div class="context">
+                            <h2>Let's Get Connected!!!</h2>
+
+                            <div class="cont-img">
+                               <img src="/deasas_mp2/RoboG.png" alt="Gela's Pic">
+                            </div> 
+
+                        </div> 
+
+
+                        <div class="contact">
+                            <p>
+                                <img src="/deasas_mp2/phone.gif" alt="Phone Num" class="contact-icon"> 0900-000-000
+                            </p>
+                            <p>
+                                <a href="https://mail.google.com">
+                                <img src="/deasas_mp2/message.gif" alt="Email" class="contact-icon" title="Google Mail"> gelaong701@mail.com</a>
+                            </p>
+                            <p>
+                                <a href="https://web.facebook.com/angela.deasas">
+                                <img src="/deasas_mp2/FB.gif" alt="FB" class="contact-icon" title="Facebook"> https://web.facebook.com/angela.deasas</a>
+                            </p>
+                            <p>
+                                <img src="/deasas_mp2/location.gif" alt="Home Adress" class="contact-icon" title="Home Adress"> Ermita Metro Manila
+                            </p>
+                            <p>
+                                <img src="/deasas_mp2/handshake.gif" alt="Let's Meet" class="contact-icon"> Let's Meet, Talk & Close Deals!!
+                            </p>
+
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+ <!-- For Card flip -->
+
+    <script>
+        function rotateTo(section) {
+            const flipCardInner = document.getElementById('flip-card-inner');
+            switch (section) {
+                case 'home':
+                    flipCardInner.style.transform = 'rotateY(0deg)';
+                    break;
+                case 'resume':
+                    flipCardInner.style.transform = 'rotateY(180deg)';
+                    break;
+                case 'portfolio':
+                    flipCardInner.style.transform = 'rotateY(90deg)';
+                    break;
+                case 'contact':
+                    flipCardInner.style.transform = 'rotateY(-90deg)';
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+
+
+ <!-- Carosell -->
+    <script>
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+        const offset = -currentIndex * 100;
+        document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+
+
+</body>
+
+</html>
